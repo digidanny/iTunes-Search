@@ -11,7 +11,7 @@ Gem::Specification.new do |s|
   
   s.add_dependency('httparty', '0.7.8')  
   
-  s.files = `git ls-files`.split('\n')
-  s.test_files = `git ls-files -- spec/*`.split('\n')  
+  s.files = `git ls-files`.split("\n")
+  s.test_files = `git ls-files -- spec/*`.split("\n")  
   s.require_paths = ["lib"]
 end
