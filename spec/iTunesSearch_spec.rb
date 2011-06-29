@@ -1,4 +1,4 @@
-require 'iTunes'
+require 'iTunesSearch'
 require 'httparty'
 
 describe ITunes, '#search' do
