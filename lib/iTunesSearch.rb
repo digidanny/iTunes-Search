@@ -10,7 +10,7 @@ class ITunes < OpenStruct
   end
   
   def query_string(options)
-    options.map {|k,v| CGI.escape(k.to_s) + '=' + CGI.escape(v) }.join('&')
+    options.map {|k,v| ( !v.blank? ? CGI.escape(k.to_s) + '=' + CGI.escape(v) : nil ) }.join('&')
   end
   
   def search(options = {})
