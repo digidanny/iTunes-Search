@@ -8,6 +8,7 @@ Gem::Specification.new do |s|
   s.description = %q{}  
   
   s.add_dependency('httparty', '0.7.8')  
+  s.add_dependency('rspec', '2.6.0')    
   
   s.files = `git ls-files`.split("\n")
   s.test_files = `git ls-files -- spec/*`.split("\n")  
