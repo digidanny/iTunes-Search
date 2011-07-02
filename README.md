@@ -12,9 +12,11 @@ Usage
       :limit => 10,
       :offset => 0
     })
-
+
+
 For full list of params see:
 [Search API Documentation](http://www.apple.com/itunes/affiliates/resources/documentation/itunes-store-web-service-search-api.html#searching)
+
 
 Test
 ====
