@@ -5,7 +5,7 @@ require 'cgi'
 
 class ITunes < OpenStruct
   
-  @@VERSION = "0.0.1"
+  VERSION = "0.0.1"
   
   def initialize
     @base_uri = "http://itunes.apple.com/search"    
