@@ -4,11 +4,13 @@ require 'active_support'
 require 'cgi'
 
 class ITunes < OpenStruct
+  attr_accessor :search_uri, :lookup_uri
   
-  VERSION = "0.0.1"
+  VERSION = "0.0.2"
   
   def initialize
-    @base_uri = "http://itunes.apple.com/search"    
+    @search_uri = "http://itunes.apple.com/search"    
+    @lookup_uri = "http://ax.phobos.apple.com.edgesuite.net/WebObjects/MZStoreServices.woa/wa/wsLookup"
   end
 
   def query_string(options)
@@ -16,7 +18,11 @@ class ITunes < OpenStruct
   end
   
   def search(options = {})
-    ActiveSupport::JSON.decode(HTTParty.get(@base_uri + "?#{self.query_string options}").body)
+    ActiveSupport::JSON.decode(HTTParty.get(@search_uri + "?#{self.query_string options}").body)
+  end
+
+  def lookup(id = "")
+    ActiveSupport::JSON.decode(HTTParty.get(@lookup_uri + "?id=#{id}").body)
   end
   
 end
