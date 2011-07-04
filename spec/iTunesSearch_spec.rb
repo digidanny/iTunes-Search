@@ -66,7 +66,7 @@ end
 describe ITunes, '#view_url' do
   it "returns a string" do
     iTunes = ITunes.new
-    body = iTunes.view_url 355395846
+    body = iTunes.view_track_url 355395846
     body.class.name.should == "String"
   end
 end

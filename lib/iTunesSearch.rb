@@ -25,7 +25,7 @@ class ITunes < OpenStruct
     ActiveSupport::JSON.decode(HTTParty.get(@lookup_uri + "?id=#{id}").body)
   end
   
-  def view_url(id)
+  def view_track_url(id)
     payload = self.lookup id
     if payload['results'].length
       payload['results'][0]['trackViewUrl']
