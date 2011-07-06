@@ -6,8 +6,6 @@ require 'cgi'
 class ITunes < OpenStruct
   attr_accessor :search_uri, :lookup_uri
   
-  VERSION = "0.0.2"
-  
   def initialize
     @search_uri = "http://itunes.apple.com/search"    
     @lookup_uri = "http://ax.phobos.apple.com.edgesuite.net/WebObjects/MZStoreServices.woa/wa/wsLookup"
