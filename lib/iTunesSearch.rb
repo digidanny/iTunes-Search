@@ -3,7 +3,7 @@ require 'httparty'
 require 'active_support'
 require 'cgi'
 
-class ITunes < OpenStruct
+class ITunesSearch < OpenStruct
   attr_accessor :search_uri, :lookup_uri
   
   def initialize

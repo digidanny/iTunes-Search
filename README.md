@@ -6,7 +6,7 @@ A gem for searching iTunes.
 Usage
 =====
 
-    @payload = ITunes.new.search({ 
+    @payload = ITunesSearch.new.search({ 
       :term => "Angry Birds", 
       :media => "software",
       :limit => 10,

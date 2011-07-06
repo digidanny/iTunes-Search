@@ -1,21 +1,21 @@
 require 'iTunesSearch'
 require 'httparty'
 
-describe ITunes, '#search' do
+describe ITunesSearch, '#search' do
   it "returns a hash" do
-    iTunes = ITunes.new
+    iTunes = ITunesSearch.new
     body = iTunes.search
     body.class.name.should == "Hash"
   end
 
   it "returns a hash with keys resultCount and results" do
-    iTunes = ITunes.new
+    iTunes = ITunesSearch.new
     body = iTunes.search
     body.has_key?('resultCount').should == true && body.has_key?('results').should == true    
   end
   
   it "should url escape the params" do
-    iTunes = ITunes.new
+    iTunes = ITunesSearch.new
     
     class HTTPartyGetMock
       def body
@@ -28,29 +28,29 @@ describe ITunes, '#search' do
   end  
 end
 
-describe ITunes, '#query_string' do 
+describe ITunesSearch, '#query_string' do 
   it "returns a query string with escaped variables corresponding to the options param" do
-    iTunes = ITunes.new
+    iTunes = ITunesSearch.new
     qs = iTunes.query_string({ :foo => 'bar', :me => 'you' })
     qs.should =~ /foo\=bar/ && qs.should =~ /me\=you/
   end
 end
 
-describe ITunes, '#lookup' do
+describe ITunesSearch, '#lookup' do
   it "returns a hash" do
-    iTunes = ITunes.new
+    iTunes = ITunesSearch.new
     body = iTunes.lookup
     body.class.name.should == "Hash"
   end
 
   it "returns a hash with keys resultCount and results" do
-    iTunes = ITunes.new
+    iTunes = ITunesSearch.new
     body = iTunes.lookup
     body.has_key?('resultCount').should == true && body.has_key?('results').should == true    
   end
   
   it "should url escape the id" do
-    iTunes = ITunes.new
+    iTunes = ITunesSearch.new
     
     class HTTPartyGetMock
       def body
@@ -63,9 +63,9 @@ describe ITunes, '#lookup' do
   end
 end
 
-describe ITunes, '#view_url' do
+describe ITunesSearch, '#view_url' do
   it "returns a string" do
-    iTunes = ITunes.new
+    iTunes = ITunesSearch.new
     body = iTunes.view_track_url 355395846
     body.class.name.should == "String"
   end
