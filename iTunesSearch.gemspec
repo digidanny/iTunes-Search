@@ -3,7 +3,7 @@ require 'iTunesSearch/version'
 
 Gem::Specification.new do |s|
   s.name = "iTunesSearch"
-  s.version = ITunesSearch::VERSION
+  s.version = ITunesSearchConstants::VERSION
   s.date = %q{2011-06-29}
   s.authors = ["Danny Tran"]
   s.email = %q{dannybtran@gmail.com}
